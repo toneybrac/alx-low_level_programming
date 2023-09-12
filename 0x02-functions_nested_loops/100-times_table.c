@@ -1,5 +1,12 @@
 #include "main.h"
 
+
+/**
+  * print_times table -  print 100x table
+  *
+  * Return: void
+  */
+
 void print_times_table(int n)
 {
 	int num, mult, prod;
