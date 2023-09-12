@@ -2,9 +2,9 @@
 
 
 /**
-  * print_times table -  print 100x table
-  *
-  *@n: The value of the times table to be printed.
+  * print_times table -  Prints the times table of the input,
+  *                      starting with 0.
+  * @n: The value of the times table to be printed.
   * Return: void
   */
 
