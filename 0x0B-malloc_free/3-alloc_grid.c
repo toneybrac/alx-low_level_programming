@@ -1,6 +1,5 @@
-#include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include "main.h"
 
 /**
  * **alloc_grid - creates a two dimensional array of ints
@@ -33,6 +32,14 @@ int **alloc_grid(int width, int height)
 				free(arr[j]);
 			return (NULL);
 		}
-		
 	}
-	
+
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
+		{
+			arr[i][j] = 0;
+		}
+	}
+	return (arr);
+}
