@@ -1,21 +1,47 @@
-_PRINTF(3)
+.TH _PRINTF "1" "26 March 2023" "0x11" "_printf man page"
+.SH NAME
+_printf - print data and format
+.SH SYNOPSIS
+.B printf FORMAT [ARGUMENT]...
+.SH DESCRIPTION
+Prints ARGUMENT(s) based on FORMAT
 
-NAME
-	_printf - prints supplied string with certain operators for substitution and formatting
+If format includes format specifiers (subsequences beginning with %), the additional arguments following format are formatted and inserted in the resulting string replacing their respective specifiers.
 
-SYNOPSIS
-	_printf FORMAT [ARGUMENTS] ...
+_printf will also take an indefinite amount of arguments.
 
-DESCRIPTION
-        Print ARGUMENT(s) according to OPTION within the supplied FORMAT string
+Example:
+_printf("%s", text);
 
-	    FORMAT controls the output to STDOUT including OPERATORS
+In the Example print the value of text with %s give the format of text.
 
-EXAMPLES
-	_print("Alx Project %d", n);
+.B The conversion specifiers
 
-REPORTING BUGS
-    Report _printf bugs to https://www.github.com/adenicole/printf    
+.IP %c
+- prints character.
+.IP %s
+- prints string.
+.IP %%
+- prints percentage symbol.
+.IP %d
+- prints decimal.
+.IP %i
+- prints integer number.
+.IP %b
+- prints binary representation.
+.IP %p
+- prints pointer.
+.IP %o
+- prints octal representation.
+.IP %r
+- prints string in reverse.
+.IP %u
+- prints unsigned integer.
+.IP %x
+- prints hexadecimal representation.
 
-AUTHORS
-	Made by Adeyemi Nicole and Timilehin Bello
+.SH SEE ALSO
+.I printf (3)
+.SH AUTHOR
+Antony Muga https://antonymuga.github.io
+Nicholas Oyengo
