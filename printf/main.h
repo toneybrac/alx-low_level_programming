@@ -1,33 +1,56 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <limits.h>
 
-typedef struct format{
-    char *id;
-    int (*f)();
-}match;
+#define NULL_STRING "(null)"
+#define NUL '\0'
 
-int _putchar(char c);
+/**
+ * struct convert - defines a structure for symbols and functions
+ *
+ * @sym: The operator
+ * @f: The function associated
+ */
+
+struct convert
+{
+	char *sym;
+	int (*f)(va_list);
+};
+typedef struct convert conver_t;
+
+
 int _printf(const char *format, ...);
-int _printf_char(va_list val);
-int printf_string(va_list val);
-int _strlen(char *str);
-int _strlenc(const char *str);
-int print_37(void);
-int print_int(va_list args);
-int print_dec(va_list args);
-int print_bin(va_list val);
-int print_unsigned(va_list args);
-int print_oct(va_list val);
-int print_hex(va_list val);
-int print__HEX(va_list val);
-int print__HEX_extra(unsigned int num);
-int print_exc_string(va_list val);
+int _putchar(char c);
+int format_reciever(const char *format, conver_t f_list[], va_list arg_list);
+int print_percent(va_list);
+int print_integer(va_list);
+int print_char(va_list);
+int print_string(va_list);
+int print_binary(va_list);
+int print_unsigned_integer(va_list);
+int print_octal(va_list list);
+int print_hex(va_list list);
+int print_HEX(va_list list);
+int print_String(va_list val);
 int print_pointer(va_list val);
-int print_hex_extra(unsigned long int num);
-int print_rev(va_list val);
-int print_rot13(va_list val);
+int print_rev(va_list l);
+int print_rot13(va_list list);
 
+int print_number(va_list args);
+unsigned int base_len(unsigned int, int);
+char *rev_string(char *);
+void write_base(char *str);
+char *_memcpy(char *dest, char *src, unsigned int n);
+int print_unsgined_number(unsigned int n);
+int hex_check(int num, char x);
+int print_hex_aux(unsigned long int num);
+int isNonAlphaNumeric(char c); 
+int _puts(char *str);
+char *convert(unsigned long int num, int base, int lowercase);
 #endif
