@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # 0x011 .C Printf
 The aim of the project is to understand the concept of team work and therefore, demisifying the concept of printf
@@ -79,3 +80,6 @@ These are all the tasks of this project, the ones that are completed link to the
 
 ---
 
+=======
+printf
+>>>>>>> ea272a51a70dc5e262e376d7c83dd88e13807bff
